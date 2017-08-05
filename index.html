@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title> Psychic Game </title>   
+
+    <link rel="stylesheet" type= text/css href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+</head>
+<body>
+  <div class="jumbotron">
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-6">
+          <img src="assets/images/psychic.jpg" class="img-responsive" alt="psychic">
+        </div>
+        <div class="col-md-5"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-6" id="game">
+          <p><h1> The Psychic Game</h1></p>
+          <p><h2>Guess what letter I'm thinking of</h3></p>
+          <p><h3>Wins: 0</h3></p>
+          <p><h3>Losses: 0</h3></p>
+          <p><h3>Guesses Left: 9</h3></p>
+          <p><h2>Your guesses so far: </h2></p>
+        </div>
+        <div class="col-md-5"></div>
+      </div>
+  </div>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+    // This array will hold what we guess
+    var guessedLetters = [];
+
+    // This variable will be randomly assigned one of the three letters
+    var letterToGuess = null;
+    var guessesLeft = 9;
+    var wins = 0;
+    var losses = 0;
+    var letterToBeGuessed = letters[Math.floor(Math.random() * letters.length)];
+      console.log("Wins: " + wins + " Losses: " + losses + " GuessesLeft: " + guessesLeft + " Guesses so far: " + guessesSoFar + " Computer picked: " + letterToBeGuessed);
+  document.onkeyup = function(event) {
+        // Lowercase the letter
+      var letter = String.fromCharCode(event.keyCode).toLowerCase();
+
+      // We'll check if there's a match.
+      if (letter === letterToGuess) {
+
+        // If there is then we win and we'll update the HTML to display the win.
+        wins++;
+    </script>
+  </body>
+</html>
